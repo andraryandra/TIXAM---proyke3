@@ -1,6 +1,6 @@
 <?php use Carbon\Carbon; ?>
 @extends('layouts.app')
-@section('title', 'TiXam - Aplikasi Ujian Berbasis Komputer')
+@section('title', 'Aplikasi Sistem Ujian')
 @section('breadcrumb')
   <h1>Dashboard</h1>
   <ol class="breadcrumb">
@@ -10,12 +10,7 @@
 @endsection
 @section('content')
   <?php include(app_path().'/functions/myconf.php'); ?>
-  @if(Auth::user()->status == 'A')
-    <div class="callout callout-info">
-      <h4>Hai, <b>{{ Auth::user()->nama }} (Admin)</b></h4>
-      <p>Anda adalah admin aplikasi ini. Selalu pantau <a href="https://bit.ly/2AsLt8m" target="_blank">https://bit.ly/2AsLt8m</a> untuk mendapatkan update terbaru. Dan yuk ajak guru-guru menjadi kontributor <a href="http://ayosinau.com">Ayosinau.com</a>.</p>
-    </div>
-  @endif
+
   @if(Auth::user()->status == 'A' || Auth::user()->status == 'G')
     <div class="col-md-3 col-sm-4 col-xs-12">
       <div class="info-box">
@@ -49,8 +44,8 @@
       <div class="info-box">
         <span class="info-box-icon bg-red"><i class="ion ion-pie-graph"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Jumlah Materi</span>
-          <span class="info-box-number">{{ number_format($materis) }} <small>materi</small></span>
+          <span class="info-box-text">Jumlah Mata Pelajaran</span>
+          <span class="info-box-number">{{ number_format($materis) }} <small>mata pelajaran</small></span>
         </div>
       </div>
     </div>
@@ -126,15 +121,15 @@
         <div class="box-header with-border">
           <h3 class="box-title" style="color: coral"><i class="fa fa-info-circle"></i> Informasi</h3>
         </div>
-        <div class="box-body">
+        <!-- <div class="box-body">
           <p>Terimakasih telah menggunakan aplikasi ujian (<b>TiXam</b>) dari <a href="https://tipa.co.id" target="_blank">Tipamedia</a> ini. Untuk melakukan update sangat disarankan menggunakan <i>git</i> dengan mengetikan <br><i>git pull origin master</i>.</p>
           <p>Jangan lupa untuk berikan bintang di <a href="https://github.com/wisnuvb/tixam" target="_blank">github tixam</a> ya, supaya lebih banyak lagi yang bisa mengetahui dan menggunakan tixam.</p>
-        </div>
+        </div> -->
       </div>
     </div>
   @else
     <div class="alert" style="background: #fff; border: solid thin #d8d5d5;">
-      <p>Hai {{ Auth::user()->nama }}, Selamat datang di TiXam. Disini kamu bisa temukan materi yang telah disiapkan oleh Guru serta mengerjakan soal latihan dan ujian.</p>
+      <p>Hai {{ Auth::user()->nama }}, Selamat datang di Aplikasi Sistem Ujian. Disini kamu bisa temukan ujian yang telah disiapkan oleh Guru serta mengerjakan soal latihan dan ujian.</p>
       <p>Pantau perkembangan kamu dengan melihat nilai-nilai latihan dan ujian dengan cepat.</p>
       <p>Apabila ada hal yang kurang dipahami, bisa ditanyakan kepada Guru atau operator sekolah yang mengelola aplikasi ini.</p>
     </div>

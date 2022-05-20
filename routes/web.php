@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
+use App\functions\excel_reader;
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
@@ -16,7 +18,7 @@ Route::group(['prefix' => 'crud'], function () {
 	Route::post('simpan-materi', 'CrudController@simpanMateri');
 	Route::post('terbit-soal', 'CrudController@terbitSoal');
 	Route::post('simpan-detail-soal', 'SoalController@simpanDetailSoal');
-	Route::post('simpan-detail-soal-via-excel', 'SoalController@simpanDetailSoalExcel');
+	Route::post('/crud/simpan-detail-soal-via-excel', 'SoalController@simpanDetailSoalExcel');
 	Route::post('simpan-gambar-materi', 'CrudController@simpanGambarMateri');
 	Route::post('hapus-gambar-materi', 'CrudController@hapusGambarMateri');
 	Route::post('simpan-gambar-user', 'CrudController@simpanGambarUser');
@@ -49,6 +51,12 @@ Route::group(['prefix' => 'master'], function () {
 	// route master kelas
 	Route::get('kelas', 'KelasController@index')->name('master.kelas');
 	Route::get('data-kelas', 'KelasController@dataKelas')->name('master.data_kelas');
+	Route::get('kelas/detail/{id}', 'KelasController@detailKelas')->name('master.detail_kelas');
+	Route::get('detail-kelas/', 'KelasController@detailKelasSiswa')->name('master.detail_kelas_siswa');
+	Route::get('kelas/ubah/{id}', 'KelasController@ubahKelas')->name('master.ubah_kelas');
+
+	Route::get('mapel', 'MataPelajaranController@index')->name('master.matapelajaran');
+	Route::get('data-mapel', 'MataPelajaranController@dataMapel')->name('master.data_mapel');
 	Route::get('kelas/detail/{id}', 'KelasController@detailKelas')->name('master.detail_kelas');
 	Route::get('detail-kelas/', 'KelasController@detailKelasSiswa')->name('master.detail_kelas_siswa');
 	Route::get('kelas/ubah/{id}', 'KelasController@ubahKelas')->name('master.ubah_kelas');

@@ -18,8 +18,6 @@ class CreateSchoolsTable extends Migration
       $table->string('nama', 150)->nullable();
       $table->string('alamat', 250)->nullable();
       $table->string('logo', 150)->nullable();
-      $table->string('header', 150)->nullable();
-      $table->string('motto', 250)->nullable();
       $table->timestamps();
     });
   }

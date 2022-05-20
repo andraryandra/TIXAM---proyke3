@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,12 +18,12 @@ class UsersTableSeeder extends Seeder
   	for ($i=0; $i < 1; $i++) {
   		DB::table('users')->insert([
   			'nama' 						=> $faker->name,
-  			'no_induk' 				=> mt_rand(1000000000, mt_getrandmax()),
+  			'no_induk' 				=> mt_rand(100880000, mt_getrandmax()),
   			'jk' 							=> 'L',
   			'status' 					=> 'A',
   			'status_sekolah' 	=> 'Y',
-  			'email' 					=> 'admin@ayosinau.com',
-  			'password' 				=> '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm'
+  			'email' 					=> 'admin@asi.com',
+  			'password' 				=> Hash::make('password'),
   		]);
   	}
   }

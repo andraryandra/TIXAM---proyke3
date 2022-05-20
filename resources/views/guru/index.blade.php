@@ -92,7 +92,7 @@
       <h3 class="box-title" style="color: darkorange"><i class="fa fa-info-circle"></i> Informasi</h3>
     </div>
     <div class="box-body">
-      <p>Daftarkan seluruh guru malalui halaman ini. Guru memiliki akses untuk membuat dan menerbitkan soal serta materi.</p>
+      <p>Daftarkan seluruh guru malalui halaman ini. Guru memiliki akses untuk membuat dan menerbitkan soal.</p>
       <p>Jika terdapat data guru yang belum valid atau guru yang belum terdaftar, hubungi operator sekolah untuk merubah atau mendaftarkan guru yang bersangkutan.</p>
     </div>
   </div>

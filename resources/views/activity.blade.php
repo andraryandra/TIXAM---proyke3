@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="box-body">
-	    <p>Aktifitas terkini yang dilakukan oleh pengguna aplikasi Ti-xam.</p>
+	    <p>Aktifitas terkini yang dilakukan oleh pengguna aplikasi Sistem Ujian.</p>
     </div>
   </div>
 </div>

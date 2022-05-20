@@ -70,9 +70,9 @@
     <!-- Logo -->
     <a href="{{ url('/') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>T</b>XM</span>
+      <span class="logo-mini"><b></b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Ti</b>Xam</span>
+      <span class="logo-lg"><b>Sistem</b>Ujian</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -189,7 +189,6 @@
 
                 <p>
                   {{ Auth::user()->nama }}
-                  <small>Member since Nov. 2012</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -256,22 +255,23 @@
             <li class="{{Request::is('master/guru*') == true  ? 'active' : '' }}"><a href="{{ url('/master/guru') }}"><i class="fa fa-circle-o"></i> Guru</a></li>
             <li class="{{Request::is('master/kelas*') == true  ? 'active' : '' }}"><a href="{{ url('/master/kelas') }}"><i class="fa fa-circle-o"></i> Kelas</a></li>
             <li class="{{Request::is('master/siswa*') == true  ? 'active' : '' }}"><a href="{{ url('/master/siswa') }}"><i class="fa fa-circle-o"></i> Siswa</a></li>
+            <li class="{{Request::is('master/matapelajaran*') == true  ? 'active' : '' }}"><a href="{{ url('/master/matapelajaran') }}"><i class="fa fa-circle-o"></i> Mata Pelajaran</a></li>
           </ul>
         </li>
         <li class="treeview {{ Request::is('elearning*') == true  ? 'active' : '' }}">
           <a href="#">
-            <i class="fa fa-graduation-cap"></i> <span>E-Learning</span>
+            <i class="fa fa-graduation-cap"></i> <span>Ujian</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="{{Request::is('elearning/materi*') == true  ? 'active' : '' }}"><a href="{{ url('/elearning/materi') }}"><i class="fa fa-circle-o"></i> Materi</a></li>
+            <!-- <li class="{{Request::is('elearning/materi*') == true  ? 'active' : '' }}"><a href="{{ url('/elearning/materi') }}"><i class="fa fa-circle-o"></i> Materi</a></li> -->
             <li class="{{ Request::is('elearning/soal*') == true  ? 'active' : '' }}"><a href="{{ url('/elearning/soal') }}"><i class="fa fa-circle-o"></i> Soal</a></li>
             <li class="{{Request::is('elearning/laporan*') == true  ? 'active' : '' }}"><a href="{{ url('/elearning/laporan') }}"><i class="fa fa-circle-o"></i> Laporan</a></li>
           </ul>
         </li>
-        <li class="treeview {{ Request::is('cetak*') == true  ? 'active' : '' }}">
+        <!-- <li class="treeview {{ Request::is('cetak*') == true  ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-print"></i> <span>Cetak</span>
             <span class="pull-right-container">
@@ -282,11 +282,13 @@
             <li class="{{Request::is('cetak/kartu-ujian*') == true  ? 'active' : '' }}"><a href="{{ url('/cetak/kartu-ujian') }}"><i class="fa fa-circle-o"></i> Kartu Ujian</a></li>
             <li class="{{Request::is('cetak/berita-acara*') == true  ? 'active' : '' }}"><a href="{{ url('/cetak/berita-acara') }}"><i class="fa fa-circle-o"></i> Berita Acara</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="{{ Request::is('pengaturan*') == true ? 'active' : '' }}"><a href="{{ url('/pengaturan') }}"><i class="fa fa-cog"></i> <span>Pengaturan</span></a></li>
         @elseif($user->status == 'S')
           <li class="{{ Request::is('siswa/materi*') == true ? 'active' : '' }}"><a href="{{ url('siswa/materi') }}"><i class="fa fa-database"></i> <span>Materi</span></a></li>
           <li class="{{ Request::is('siswa/ujian*') == true ? 'active' : '' }}"><a href="{{ url('siswa/ujian') }}"><i class="fa fa-list"></i> <span>Ujian</span></a></li>
+        @elseif($user->status == 'SA')
+        <li class="{{ Request::is('siswa/ujian*') == true ? 'active' : '' }}"><a href="{{ url('siswa/ujian') }}"><i class="fa fa-list"></i> <span>Sekolah</span></a></li>
         @endif
         <li class=""><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
       </ul>
@@ -310,13 +312,13 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
+  <!-- <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.0
     </div>
     <strong>Copyright &copy; 2016-{{ date('Y') }} <a href="http://tipa.co.id" target="_blank">Tipamedia</a>.</strong> All rights
     reserved.
-  </footer>
+  </footer> -->
 </div>
 <!-- ./wrapper -->
 

@@ -30,16 +30,16 @@
               <div class="col-sm-4">
                 <select name="jenis" class="form-control">
                   <option value="">Pilih jenis soal</option>
-                  <option value="1">Soal Ujian</option>
-                  <option value="2">Soal Latihan</option>
+                  <option value="1">Soal UAS</option>
+                  <option value="2">Soal UTS</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label for="materi" class="col-sm-2 control-label">Materi</label>
+              <label for="materi" class="col-sm-2 control-label">Mata Pelajaran</label>
               <div class="col-sm-8">
                 <select name="materi" class="form-control">
-                  <option value="">Pilih materi</option>
+                  <option value="">Pilih Mata Pelajaran</option>
                   @if($materis->count())
                   @foreach($materis as $materi)
                   <option value="{{ $materi->id }}">{{ $materi->judul }}</option>
