@@ -8,7 +8,7 @@
   </ol>
 @endsection
 @section('content')
-  <?php include(app_path().'/functions/myconf.php'); ?>
+<?php include(app_path() . '/functions/myconf.php'); ?>
   <div class="col-md-8">
     <div class="box box-primary">
       <div class="box-header with-border">
@@ -68,6 +68,7 @@
   <link rel="stylesheet" href="{{URL::asset('assets/plugins/datatables/extensions/Responsive/css/responsive.dataTables.css')}}">
   <link rel="stylesheet" href="{{URL::asset('assets/plugins/datatables/extensions/FixedHeader/css/fixedHeader.bootstrap.css')}}">
 @endpush
+
 @push('scripts')
   <script src="{{URL::asset('assets/dist/js/offline.min.js')}}"></script>
   <script src="{{URL::asset('assets/plugins/datatables/media/js/jquery.dataTables.min.js')}}"></script>
@@ -86,7 +87,7 @@
       }
 
     	tabel_kelas = $('#tabel_kelas').DataTable({
-        processing: true,
+        // processing: true,
         serverSide: true,
         responsive: true,
         lengthChange: true,
@@ -153,4 +154,4 @@
       });
     });
   </script>
-@endpush
+@endpush 

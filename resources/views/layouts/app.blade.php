@@ -255,7 +255,7 @@
             <li class="{{Request::is('master/guru*') == true  ? 'active' : '' }}"><a href="{{ url('/master/guru') }}"><i class="fa fa-circle-o"></i> Guru</a></li>
             <li class="{{Request::is('master/kelas*') == true  ? 'active' : '' }}"><a href="{{ url('/master/kelas') }}"><i class="fa fa-circle-o"></i> Kelas</a></li>
             <li class="{{Request::is('master/siswa*') == true  ? 'active' : '' }}"><a href="{{ url('/master/siswa') }}"><i class="fa fa-circle-o"></i> Siswa</a></li>
-            <li class="{{Request::is('master/matapelajaran*') == true  ? 'active' : '' }}"><a href="{{ url('/master/matapelajaran') }}"><i class="fa fa-circle-o"></i> Mata Pelajaran</a></li>
+            <li class="{{Request::is('master/mapel*') == true  ? 'active' : '' }}"><a href="{{ url('/master/mapel') }}"><i class="fa fa-circle-o"></i> Mata Pelajaran</a></li>
           </ul>
         </li>
         <li class="treeview {{ Request::is('elearning*') == true  ? 'active' : '' }}">

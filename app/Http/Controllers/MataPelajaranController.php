@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\User;
+use App\Models\Kelas;
 use App\Models\MataPelajaran;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Yajra\Datatables\Facades\Datatables;
+
+
+
 class MataPelajaranController extends Controller
 {
     public function __construct()
@@ -13,15 +20,17 @@ class MataPelajaranController extends Controller
 
   public function index()
   {
-    if (Auth::user()->status == 'G' or Auth::user()->status == 'A') {
-      return view('mapel.index', compact('user', 'gurus'));
+    if (auth()->user()->status == 'G' or auth()->user()->status == 'A') {
+      return view('mapel.index');
     } else {
       return redirect()->route('home.index');
     }
   }
+
+
   public function dataMapel()
   {
-    $mapel = MataPelajaran::all()->get();
+    $mapel = MataPelajaran::all();
     if (Auth::user()->status == 'G') {
       return Datatables::of($mapel)
         ->addColumn('empty_str', function ($mapel) {

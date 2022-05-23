@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\User;
 
 // use Datatables;
-use DB;
-use Excel;
-use PDF;
-
-use App\User;
-use App\Models\Jawab;
 use App\Models\Soal;
+use App\Models\Jawab;
 use App\Models\Kelas;
-use App\Models\Detailsoal;
-use App\Models\DetailSoalEssay;
+
+use Barryvdh\DomPDF\PDF;
 use App\Models\JawabEsay;
+use App\Models\Detailsoal;
+use Illuminate\Http\Request;
+use App\Models\DetailSoalEssay;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 // use Barryvdh\DomPDF\PDF;
 // use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Facades\Excel;
 use Yajra\Datatables\Facades\Datatables;
 
 class LaporanController extends Controller
